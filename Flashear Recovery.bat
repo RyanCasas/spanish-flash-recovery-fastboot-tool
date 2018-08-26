@@ -17,7 +17,7 @@ ECHO.
 ECHO   · Asegúrate de que tienes el bootloader desbloqueado.
 ECHO   · Asegúrate de que tienes los drivers instalados correctamente.
 ECHO   · Pon el archivo del recovery en la misma carpeta que este script.
-ECHO   · Renombra dicho archivo a recovery.img
+ECHO   · Asegúrate de que solo hay un archivo de recovery la carpeta.
 ECHO   · Pon el teléfono en modo fastboot (Mantén pulsado VOL- y Power a la vez).
 ECHO   · Conecta el teléfono al PC.
 ECHO   · Espera 5 segundos.
@@ -29,6 +29,7 @@ PAUSE
 ECHO.
 ECHO   Flasheando el recovery...
 ECHO.
+ren *.img recovery.img
 fastboot flash recovery recovery.img
 ECHO.
 CLS
