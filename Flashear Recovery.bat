@@ -29,6 +29,7 @@ PAUSE
 ECHO.
 ECHO.
 
+:RecoveryScan
 ren *.img recovery.img >nul 2>&1
 
 IF EXIST "recovery.img" (
@@ -55,10 +56,12 @@ IF EXIST "recovery.img" (
   ECHO.
   ECHO.
   ECHO Error: No has puesto ningún archivo de recovery válido.
-  ECHO Asegúrate de poner algún archivo de recovery en la carpeta y vuelve a ejecutar este script.
+  ECHO Asegúrate de poner un archivo de recovery en la carpeta y pulsa ENTER.
   ECHO.
   ECHO.
   PAUSE
+  CLS
+  GOTO RecoveryScan
 )
 
 CLS
