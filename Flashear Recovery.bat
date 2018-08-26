@@ -27,19 +27,38 @@ ECHO.
 ECHO.
 PAUSE
 ECHO.
-ECHO   Flasheando el recovery...
 ECHO.
-ren *.img recovery.img
-fastboot flash recovery recovery.img
-ECHO.
-CLS
-ECHO.
-ECHO   Recovery flasheado. Ahora mantén pulsado el botón VOL+ en el télefono.
-ECHO   Mientras mantienes pulsado el VOL+, pulsa ENTER. Esto te llevará al Recovery.
-ECHO.
-PAUSE
-ECHO.
-ECHO   Reiniciando...
-ECHO.
-fastboot reboot
+
+ren *.img recovery.img >nul 2>&1
+
+IF EXIST "recovery.img" (
+	ECHO   Flasheando el recovery...
+	fastboot flash recovery recovery.img
+	CLS
+	ECHO.
+	ECHO.
+	ECHO   Recovery flasheado. No desconectes el teléfono todavía.
+	ECHO   Ahora mantén pulsado el botón VOL+ en el télefono.
+	ECHO   Mientras mantienes pulsado el VOL+, pulsa ENTER.
+	ECHO   Esto te llevará al Recovery que acabas de instalar.
+	ECHO.
+	ECHO.
+	PAUSE
+	ECHO.
+	ECHO.
+	ECHO   Reiniciando...
+	ECHO.
+	ECHO.
+	fastboot reboot
+) ELSE (
+  CLS
+  ECHO.
+  ECHO.
+  ECHO Error: No has puesto ningún archivo de recovery válido.
+  ECHO Asegúrate de poner algún archivo de recovery en la carpeta y vuelve a ejecutar este script.
+  ECHO.
+  ECHO.
+  PAUSE
+)
+
 CLS
