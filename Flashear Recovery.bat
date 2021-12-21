@@ -39,9 +39,8 @@ IF EXIST "recovery.img" (
 	ECHO.
 	ECHO.
 	ECHO   Recovery flasheado. No desconectes el teléfono todavía.
-	ECHO   Ahora mantén pulsado el botón VOL+ en el télefono.
-	ECHO   Mientras mantienes pulsado el VOL+, pulsa ENTER.
-	ECHO   Esto te llevará al Recovery que acabas de instalar.
+	ECHO   Ahora mantén pulsado el botón VOL+ en el télefono y pulsa ENTER.
+  ECHO   Mantén pulsado VOL+ hasta que aparezca el Recovery que acabas de instalar.
 	ECHO.
 	ECHO.
 	PAUSE
